@@ -2,4 +2,5 @@ Flask
 #uwsgi
 behave==1.2.5
 beautifulsoup4==4.5.3
-selenium==3.4.1
+#selenium==3.4.1 - too old, does not work with new versions of Chrome
+selenium==4.22.0

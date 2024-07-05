@@ -1,3 +1,4 @@
+from tests.acceptance.locators.base_page import BasePageLocators
 from tests.acceptance.locators.home_page import HomePageLocators
 class BasePage:
 
@@ -12,3 +13,7 @@ class BasePage:
     @property  # this means, that this method can be called WITHOUT specifying (). Example page.title instead of page.title()
     def title(self):
         return self.driver.find_element(*HomePageLocators.TITLE)  # NOTE ASTERISK is needed to de-construct the table, so same as find_element(By.TAG_NAME, 'h1')
+
+    @property
+    def navigation(self):
+        return self.driver.find_elements(*BasePageLocators.NAV_LINKS)

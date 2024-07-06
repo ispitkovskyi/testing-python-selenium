@@ -10,7 +10,7 @@ use_step_matcher('re')
 def step_impl(context):
     context.cService = webdriver.ChromeService(
         executable_path="C:/Users/ispitkovskyi/PycharmProjects/testing-python-selenium/chromedriver.exe")  # the driver is put into the directory with steps. Or you can put it in the PATH and in such case do NOT specify it here
-    context.driver = webdriver.Chrome(service=context.cService)
+    context.driver = webdriver.Chrome(service=context.cService)  # FIRST STEP IN SCENARIO - puts driver object into the 'context' variable, which will be passed to other step-methods of this scenario
     page = HomePage(context.driver)
     context.driver.get(page.url)
 
@@ -18,7 +18,7 @@ def step_impl(context):
 def step_impl(context):
     context.cService = webdriver.ChromeService(
         executable_path="C:/Users/ispitkovskyi/PycharmProjects/testing-python-selenium/chromedriver.exe")  # the driver is put into the directory with steps. Or you can put it in the PATH and in such case do NOT specify it here
-    context.driver = webdriver.Chrome(service=context.cService)
+    context.driver = webdriver.Chrome(service=context.cService)   # FIRST STEP IN SCENARIO - puts driver object into the 'context' variable, which will be passed to other step-methods of this scenario
     page = BlogPage(context.driver)
     context.driver.get(page.url)
 

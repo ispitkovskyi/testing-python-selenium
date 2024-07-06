@@ -2,9 +2,10 @@
 <html>
 <head>
     <script>
+<!-- If there are NO posts already existing, 'TypeError: Cannot read properties of null (reading 'style')' error appears   -->
     window.onload = function() {
         setTimeout(function() {
-            document.getElementById('posts').style.display = 'block';
+            var postsElement = document.getElementById('posts').style.display = 'block';
         }, 3000);
     };
 

@@ -1,6 +1,7 @@
 from behave import *
 
 from tests.acceptance.page_model.base_page import BasePage
+from tests.acceptance.page_model.blog_page import BlogPage
 
 use_step_matcher('re')
 
@@ -13,3 +14,9 @@ def step_impl1(context):
 def step_impl1(context, label):
     page = BasePage(context.driver)
     assert page.title.text == label
+
+@then('I can see there is a posts section on the page')
+def step_impl1(context):
+    page = BlogPage(context.driver)
+
+    assert page.posts_section.is_displayed()

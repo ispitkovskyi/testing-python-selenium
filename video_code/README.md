@@ -1,5 +1,7 @@
 # Set up
 
+## IMPOJRTANT:  Before running this scenario - you MUST CREATE AT LEAST ONE POST, else error like 'TypeError: Cannot read properties of null (reading 'style')' occurs in browser.
+
 We'll need a few things to install for this section:
 
 - https://sites.google.com/a/chromium.org/chromedriver/downloads

@@ -18,5 +18,16 @@ def step_impl1(context, label):
 @then('I can see there is a posts section on the page')
 def step_impl1(context):
     page = BlogPage(context.driver)
-
     assert page.posts_section.is_displayed()
+
+@then('I can see there is a post with title "(.*)" in the posts section')
+def step_impl1(context, title):
+    page = BlogPage(context.driver)
+    posts_with_title = [post for post in page.posts if post.text == title]
+
+    assert len(posts_with_title) > 0
+
+    # NOTE
+    # all(...) is a built-in python function, which evaluates to true if ALL elements inside are true
+    # there is similar function any(...), which evaluates to true if AT LEAST ONE element inside is true
+    assert all([post.is_displayed() for post in posts_with_title])
